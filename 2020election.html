@@ -1,0 +1,503 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" />
+    <title>虛實間的政治意見領袖——探討PTT八卦版的政治議論生態</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", "PingFang TC", "Apple LiGothic Medium", Roboto, "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+            background-color: #fff;
+        }
+        header>span {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 2.25;
+        }
+        header>h1 {
+            margin-top: 11px;
+            font-size: 34px;
+            font-weight: bold;
+            line-height: 1.32;
+        }
+        header,
+        article>header {
+            max-width: calc(270/320*100%);
+            margin: 0 auto
+        }
+        article {
+            color: #2d2d2d;
+        }
+        article>header>span {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 2.25;
+        }
+        article>p,
+        article>h2,
+        article>h3,
+        article>blockquote,
+        article>ul,
+        article figcaption,
+        article>div,
+        article>header {
+            max-width: calc(270/320*100%);
+            margin: 0 auto;
+        }
+        article>p,
+        article>blockquote {
+            font-size: 18px;
+            line-height: 2.0;
+            letter-spacing: 0.9px;
+            margin-top: 40px;
+            text-align: justify;
+        }
+        article>blockquote {
+            padding-left: 21px;
+            color: #6d6d6d;
+            border-left: 1px solid #6d6d6d;
+        }
+        article figcaption {
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.8px;
+            color: #6d6d6d;
+            margin-top: 15px;
+        }
+        article>h2 {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1.1px;
+            line-height: 1.64;
+            margin-top: 40px;
+        }
+        article>h3 {
+            font-size: 18x;
+            font-weight: bold;
+            letter-spacing: 1.1px;
+            line-height: 1.64;
+            margin-top: 40px;
+        }
+        @media screen and (min-width:1024px) {
+            header {
+                width: 900px;
+            }
+            article,
+            article>header {
+                max-width: 900px;
+                margin: 0 auto;
+            }
+            .pic-of-chart {
+                display: none
+            }
+            .mobile-chart {
+                display: none
+            }
+        }
+        @media screen and (min-width:768px) and (max-width:1023px) {
+            header {
+                width: 678px
+            }
+            article,
+            article>header {
+                max-width: 678px;
+                margin: 0 auto;
+            }
+        }
+        .authors {
+            margin-right: 30px;
+            font-size: 15px;
+            line-height: 2.25;
+        }
+        a {
+            color: #2d2d2d;
+            text-decoration: none;
+            border-bottom: 1px solid #c71b0a;
+        }
+        article>figure {
+            margin: 0;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            article>figure {
+                width: 678px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        @media screen and (min-width: 1024px) {
+            article>figure {
+                width: 900px;
+                margin-left: auto;
+                margin-right: auto;
+                max-width:756px;
+            }
+        }
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", "PingFang TC", "Apple LiGothic Medium", Roboto, "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+            background-color: #F1F1F1;
+        }
+        .header {
+            margin-top: 17px;
+            margin-bottom: 17px;
+        }
+        .introduction {
+            font-size: 22px;
+            line-height: 1.82;
+            letter-spacing: 1.6px;
+            text-align: justify;
+            margin-top: 30px;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            article>p,
+            article>h2,
+            article>h3,
+            article>blockquote,
+            article>ul,
+            article figcaption,
+            article>div,
+            article>header,
+            article>ul {
+                width: 550px;
+            }
+        }
+        @media screen and (min-width: 1024px) {
+            article>p,
+            article>h2,
+            article>h3,
+            article>blockquote,
+            article>ul,
+            article figcaption,
+            article>div,
+            article>header {
+                max-width: 756px;
+            }
+            article>ul {
+                width: 700px;
+            }
+        }
+        @media screen and (max-width:768px) {
+            .header-logobox {
+                padding-bottom: 45%;
+                position: relative;
+                margin-bottom: 55 px;
+            }
+            .liver-logo {
+                position: absolute;
+                left: 32%;
+                width: 35%;
+            }
+            .line {
+                position: absolute;
+                left: 0%;
+                top: 95%;
+                width: 100%;
+                height: 1%
+            }
+            .law {
+                position: absolute;
+                left: 15%;
+                top: 96%;
+                width: 18%;
+            }
+            .economics {
+                position: absolute;
+                left: 40.5%;
+                top: 96%;
+                width: 18%;
+            }
+            .education {
+                position: absolute;
+                left: 65.5%;
+                top: 96%;
+                width: 18%;
+            }
+            .fb {
+                position: absolute;
+                right: 8%;
+                top: 7%;
+                width: 6%;
+            }
+            .ig {
+                position: absolute;
+                right: 0%;
+                top: 7%;
+                width: 6%;
+            }
+        }
+        @media screen and (min-width: 768px) {
+            .header-logobox {
+                padding-bottom: 20%;
+                position: relative;
+            }
+            .liver-logo {
+                position: absolute;
+                left: 0;
+                width: 20%
+            }
+            .line {
+                position: absolute;
+                right: 0%;
+                top: 35%;
+                width: 75%;
+                height: 1%
+            }
+            .law {
+                position: absolute;
+                left: 35%;
+                top: 36%;
+                width: 15%;
+            }
+            .economics {
+                position: absolute;
+                left: 55%;
+                top: 36%;
+                width: 15%;
+            }
+            .education {
+                position: absolute;
+                left: 75%;
+                top: 36%;
+                width: 15%;
+            }
+            .fb {
+                position: absolute;
+                right: 4%;
+                top: 2%;
+                width: 3%;
+            }
+            .ig {
+                position: absolute;
+                right: 0%;
+                top: 2%;
+                width: 3%;
+            }
+        }
+    </style>
+
+
+
+</head>
+
+<body style="font-family: Microsoft JhengHei, " Noto Sans TC ", " PingFang TC ", " Apple LiGothic Medium ", Roboto, "
+    Lucida Grande ", " Lucida Sans Unicode ", sans-serif;
+background-color: #fff">
+
+
+    <header>
+
+        <div class="header-logobox" style="margin-bottom: 50px">
+            <figure>
+                <a href="https://wenrongchang.github.io/Crazy-all-nighter/104405016/index.html" target="_self">
+                    <img src="logo.png" alt="logo" class="liver-logo">
+                </a>
+                <img src="分隔線.png" alt="line" class="line">
+                <a href="https://wenrongchang.github.io/Crazy-all-nighter/104405016/index.html#justice" target="_self">
+                    <img src="司法人權.png" alt="law" class="law">
+                </a>
+                <a href="https://wenrongchang.github.io/Crazy-all-nighter/104405016/index.html#industry" target="_self">
+                    <img src="產業經濟.png" alt="economics" class="economics">
+                </a>
+                <a href="https://wenrongchang.github.io/Crazy-all-nighter/104405016/index.html#educate" target="_self">
+                    <img src="教育文化.png" alt="education" class="education">
+                </a>
+                <a href="https://www.facebook.com/" target="_self">
+                    <img src="fb.png" alt="fb" class="fb">
+                </a>
+                <a href="https://www.instagram.com/" target="_self">
+                    <img src="ig.png" alt="ig" class="ig">
+                </a>
+            </figure>
+        </div>
+    </header>
+
+    <article>
+        <header>
+            <h1 style="margin-top: 30px">虛實間的政治意見領袖——探討PTT八卦版的政治議論生態
+            </h1>
+        </header>
+        <div style="margin-bottom:15px">
+            <b><span class="authors">團隊成員／
+                    張玟榕、陳昱愷、羅晨方
+                </span></b>
+            <span class="authors">
+                <b>｜2019.07.01</b>
+            </span>
+        </div>
+        <figure style="margin-top: 20px;max-width:900px; width: 100% ">
+            <img src="Hacker.jpg" alt="leading image of this article" width="100%" />
+        </figure>
+        <p class="introduction">
+            現今社群平台儼然成為新一代政治輿論的戰場，舉凡政策議題、政治人物形象都能透過網路行銷團隊（俗稱網軍）操作風向。像《天下雜誌》就曾分析2018年底大選前的PTT文章，發現許多曾有「濫發政治爆卦文章，操縱人氣」、「大量推文，引導輿論風向」、「大量轉發政治色彩鮮明的媒體報導，激化輿論」等異常行為的帳號。
+        </p>
+
+        <h2 class="title">一、研究緣起</h2>
+        <p>
+            因為PTT是半匿名的網路社群平台，原先一個ID就代表一個使用者的理想狀況，卻可能被有心人刻意操弄，透過創建分身假扮成代表多數人意見。兩大黨跟第三勢力的政治人物在比拼政治聲量的同時，究竟有多少的評價是真實反映民心，又有多少來自刻意操作的結果？
+        </p>
+        <h2 class="title">二、問題意識</h2>
+        <p>
+            分析PTT「時事八卦」版，政治類發文迴響最熱烈的帳號中，有無出現異常使用的狀況（俗稱網軍帶風向）？然後留言區的樣貌為何？
+        </p>
+        <h2 class="title"> 三、研究方法與研究範疇</h2>
+        <h3 class="title">(一)研究範圍</h3>
+        <p>因現今正值台灣總統大選初選期間，本研究時程鎖定3月16日（賴清德宣布角逐民進黨總統初選前一天）至6月9日（民進黨初選民調前一天），分析八卦版中所有提到各黨擬參選人（蔡英文、賴清德、韓國瑜、郭台銘、朱立倫、柯文哲）的文章標題與迴響。
+        </p>
+        <p>本研究先依不同候選人撰寫爬蟲程式碼，在抓取研究區間內所有提及該候選人的文章資料後，計算資料中「推文數加噓文數」（迴響最熱烈）的前十帳號，並將其定義為該候選人的「意見領袖」，作為本研究初步分析對象。</p>
+        <figure style="margin-top: 50px; width: 100% ">
+            <img src="candidate_rank.png" alt="leading image of this article" width="100%" />
+        </figure>
+        <p>同時計算「純推文數」（迴響最正面）及「發文數」（最常發表）的排名，看是否跟意見領袖的前十名帳號重疊，藉此判定意見領袖是否具有「只要發文都會被推」以及「很常發文表達意見」的特性。</p>
+        <p>除此之外，後續也針對意見領袖的發文內容、底下推文風向進行分析，觀察有無異常使用的行為。若有，則抓出具有特定操作痕跡的文章，進一步探討其回覆區的推噓數量是否真受影響。</p>
+
+        <h3 class="title">（二）定義異常使用</h3>
+        <p>1. 疑似分身回文：意見領袖只要發文，推文區就會固定出現某幾位粉絲，且兩者IP位置曾經重複。</p>
+        <p>2. 作息時間不正常：IP位於台灣，但是出現全天不斷上線，或是僅活躍於上班時間的情形。</p>
+        <p>3. 密集推文：針對相同立場的文章，短時間內不斷留言制式、簡短的推文。</p>
+
+        <h3 class="title">（三）使用研究工具</h3>
+
+        <p>1. 透過Python爬蟲，抓取意見領袖發文中，前二十名回覆者的ID。希望藉此找出固定回覆特定文章的帳號。</p>
+        <p>2. 利用<a href="https://www.ianalyseur.org"
+                target="_self">https://www.ianalyseur.org</a>網站，查詢個別ID的IP位置分佈以及活躍時間的習慣。希望透過爬蟲來找出符合網軍特質（IP數量多且與特定帳號高度重疊、登入時間作息異常等）的用戶。
+        </p>
+        <p>3. 藉由<a href="ttps://www.plytic.com"
+                target="_self">https://www.plytic.com</a>網站，查詢特定ID近期發文及回文內容。希望藉此找出只回特定帳號文章的用戶。</p>
+
+        <h2 class="title">四、總統擬參選人討論聲浪初探</h2>
+
+        <h3 class="title">（一）韓網路聲量奪冠，郭、賴、朱邊緣化</h3>
+        <figure style="margin-top: 50px; width: 100% ">
+            <img src="rank.png" alt="leading image of this article" width="100%" />
+        </figure>
+
+        <p>綜觀而言，韓國瑜在PTT八卦版中聲量最高，不論在「純推」、「推噓總和」、「總篇數」都是第一，且領先幅度不小。分別位居第二、第三的柯文哲與蔡英文則是相差不遠。
+        </p>
+        <p>至於較晚搶進媒體版面的郭台銘與賴清德，聲量總和約落在3萬出頭，跟前段班有近兩倍的差距，更別提在大選幾乎已經被邊緣化的朱立倫，聲量總和甚至連1萬摸不著邊。</p>
+        <p>聲量高雖然代表一個政治人物非常具有話題性，但這並不一定是件好事。比如一篇批評某政治人物的文章被推爆，這些推文數量就不會對該政治人物帶來正面形象。</p>
+        <p>綜上所述，本研究進一步透過質性調查，回頭檢視先前計算出來排名前十的意見領袖，在他們高議題聲量的背後，到底都是在支持或批評政治人物。若是批評，則可以剔除其為該候選人網軍的可能性。</p>
+        <h3 class="title">（二）黑粉現形：蔡柯支持聲浪高、韓郭黑粉比例高</h3>
+
+        <figure style="margin-top: 50px; width: 100% ">
+            <img src="rank1.png" alt="leading image of this article" width="100%" />
+        </figure>
+
+        <p>上表為六位總統擬參選人的「意見領袖」（推噓總和前十）帳號，透過人肉判別其對該候選人的支持／不支持傾向，<b>支持者標為深綠、不支持為紅、灰色為少表態或無法判別，而淺綠是詆毀對手陣營或支持該候選人所在黨派，但無法直接看出其支持該名候選人的帳號。</b>
+        </p>
+        <p>從上表中可看出，柯、蔡兩人聲量前十帳號明顯多表態支持兩人，不表態或反對者則次之，然而韓國瑜和郭台銘，則是反對多於支持佔聲量前十較高的比例，甚至郭台銘的前十聲量比例僅有一名帳號為支持者。</p>
+        <p>另外，朱立倫的聲浪前十帳號多為淺綠、也就是不直接表態支持的帳號佔多數的原因為，討論多不是以「朱立倫」為主軸，而是因為相關新聞而帶到朱立倫，舉例來說如討論聲量第一名的「MayorKoWenJe」，無論是暱稱（柯糞吃屎／中国台北市长柯文哲），以及其貼文都可看出其為為典型柯黑，有關朱立倫的貼文95%以上為轉其臉書貼文，而少討論或轉貼新聞，而聲量後依序幾名，如safelysuck<a
+                href="https://www.ptt.cc/bbs/Gossiping/M.1559481887.A.371.html"
+                target="_self">「胡幼偉：郭朱只是暖男親民　韓走的卻是「強力親民風」」</a>、akway<a
+                href="https://www.ptt.cc/bbs/Gossiping/M.1552235405.A.0FA.html"
+                target="_self">「民調輸韓、朱　柯Ｐ還會選2020？網路投票一面倒」</a>也多不以朱立倫為主角討論。</p>
+
+
+        <h2 class="title">五、PTT政治議論主體：推噓文化以「鄉民」為主體</h2>
+        <p>從上述的聲浪初探中，本研究將研究範圍從六位擬參選人，縮減到網路聲量相對高的三人將後續的分析、研究聚焦在韓國瑜、柯文哲、蔡英文三位總統擬參選人的PTT討論聲量，在這個章節我們將討論三人的聲量（「推噓總和」、「純推」、「發文篇數」）前十名帳號生態。
+        </p>
+        <h3 class="title">（一）你越黑韓我越挺韓——PTT推噓文化，爭議內容炒熱討論度</h3>
+        <figure style="margin-top: 50px; width: 100% ">
+            <img src="C-Haner.png" alt="leading image of this article" width="100%" />
+        </figure>
+        <p>韓國瑜的討論貼文推噓值，從上圖可知，概略的圖像以linhu8883324的推噓與純推為極端值（2756，2396），linhu為韓黑，發大量反對韓的新聞，如「<a
+                href=" https://www.ptt.cc/bbs/Gossiping/M.1561251224.A.017.html" target="_self">韓國瑜辦完活動
+                遺址公園「慘不忍賭」民眾大怒：垃圾出去</a>」、「<a href="https://www.ptt.cc/bbs/Gossiping/M.1560993601.A.FF7.html"
+                target="_self">[新聞] 日節目問為何只播中天?店家:可減免600元</a>」，或是「<a
+                href="https://www.ptt.cc/bbs/Gossiping/M.1560834963.A.4E3.html"
+                target="_self">[新聞]蘇貞昌虧賴皮韓國瑜回嗆:院會攝影機對著我</a>」在貼文內自己附註「一周一造勢，那不是更多電視台的攝影機。」。</p>
+        <p>而其他帳號主要分為三種型態：第一類為<b>推噓總和高、但未進純推排行前十內</b>，如iversonXD、yiyji、dandandanbao、Shireieizou、moneybuy，此類帳號是由於噓數過高，以致即便「推噓總和」高仍無法排入純推排行，每人獲得的噓依序分別高於654、490、486、440、412。
+        </p>
+        <figure style="margin-top: 50px; width: 100% ">
+            <img src="IP-of-Han.png" alt="leading image of this article" width="100%" />
+            <figcaption>有些帳號頻繁出現在不同國家的IP位置。</figcaption>
+        </figure>
+        <p>第二類則是<b>「推噓總和」與「純推」相差無幾的帳號</b>，因此在兩個排行中皆有出現，此類帳號如shared、smd1201、richshen、alterna，此類中除shared為民調分享帳號（80%以上的文為純轉民調）外，其他三人的篇數也皆有進入發文量前十排行。
+        </p>
+        <p>第三類則是純推的六到十名，此類帳號的討論即使<b>純推數比上述的第一類帳號更高，但由於噓少</b>，因此相較第一類帳號噓數過高者無法排入「推噓總和」的前十。</p>
+
+        <h3 class="title">（二）2020唯一支持蔡英文——真真假假的正面聲量</h3>
+
+        <p>我們將蔡英文相關文章的「純推」與「推＋噓總和」找出來後，先對比兩者的前十名用戶。由下圖可以發現「純推」與「推＋噓總和」皆上榜者高度重疊。二十個欄位中，有九名使用者佔去了十八個位置。</p>
+        <figure style="margin-top: 50px;width: 100% ">
+            <img src="push-rank.png" alt="leading image of this article" width="100%" />
+        </figure>
+        <p>接著將「純推」除以「推＋噓總和」得出「純推率」。發覺在「純推」與「推＋噓總和」都上榜的使用者中，純推率皆高於95%，證明這幾人發布有關蔡英文的貼文，幾乎每一篇都獲得正評（推＞噓）。</p>
+
+        <figure style="margin-top: 50px; width: 100% ">
+            <img src="push-rank-t.png" alt="leading image of this article" width="100%" />
+        </figure>
+        <p>經過深入探究，發現前兩名「純推」與「推＋噓總和」總和最多，且轉貼民進黨與蔡英文的兩位用戶：Wojnarowski跟Cheinshin。在這兩人共30篇的貼文中，即有10個ID在兩人的文中出現五次以上。</p>
+
+        <figure style="margin-top: 50px; width: 100% ">
+            <img src="commend-t.png" alt="leading image of this article" width="100%" />
+        </figure>
+        <p>不過相對的，我們也觀察到排行榜上的分享民進黨正面文章，且「純推」、「推＋噓」、「純推率」皆高的
+            Cheinshin、jeeffrey3688、Anddyliu等活躍用戶。留言多樣且有創意、也有反串推等高難度的留言，也有嘲諷政敵等，應該可以被歸類為死忠英粉。</p>
+
+        <p>總之，蔡英文在PTT有既高且正面的評價，質量皆具，且擁有許多熱衷粉絲為她撐起網路聲量，不過也有少數行跡神秘的用戶，共同撐起了目前的聲勢。</p>
+
+        <h3 class="title">（三）遇到中國就不施鹽——熱愛逐字稿的柯粉</h3>
+
+        <p>經Excel篩選過後，發現柯文哲排行榜中的第三位hithamam發文內容最為特殊，其於篩選時間內共PO了62篇文，其中觀看採訪影片打的逐字稿佔55篇，超過一半，只要有採訪影片必定PO逐字稿。下圖為篩選過程。</p>
+
+        <figure style="margin-top: 50px; width: 100% ">
+            <img src="keke.png" alt="leading image of this article" width="100%" />
+        </figure>
+        <p>另一方面，以網站檢視有相同IP的xunhuiwu在其PO文底下留言頻繁，「推」多達60篇，多為逐字稿，內容有「推、辛苦了、辛苦h大」及有關支持柯文哲的言論等，疑似為hithamam的分身帳號。比照兩方活躍時間，hithamam多於中午過後PO逐字稿，xunhuiwu則平均1小時內馬上推文，最快10分鐘內推，活動時間集中於中午過後至凌晨1:00。相較以PO文量較大的hithamam，xunhuiwu多擔任推與留言的角色，且較有明確的政治傾向，偏向柯粉，會去有關蔡英文的PO文底下嗆蔡英文。
+        </p>
+
+        <figure style="margin-top: 50px; width: 100% ">
+            <img src="hithaman.png" alt="leading image of this article" width="100%" />
+        </figure>
+
+        <p>從hithamam所PO逐字稿留言區樣貌來看，給推的柯粉頗期待逐字稿的降臨，通常一有逐字稿就推，甚至稱hithamam是逐字稿超人，有兩岸關係跟評價政壇的逐字稿討論度會上升，推常表示逐字稿才敘述完整，反觀噓則是常以「白粉、柯糞最愛的逐字稿來囉」及批評逐字稿內容空洞等等嘲諷語氣留言。
+        </p>
+        <p>以〔討論〕190515柯文哲媒體受訪逐字稿為例，該文最新編輯時間為19:01，內文提及有關柯文哲回應兩岸關係、給予戰略建議、回應併吞意圖，19:05已累積25個推，內容多半偏向「感謝逐字稿、論述完整」等，同時間第一個噓出現；19:10起陸續出現一連串的噓，批評柯文哲的言論空泛，大約累積至8個噓後，隨即出現推且幫護航的人，直至20:12為止，推的人著重於逐字稿論述完整、媒體扭曲原意等，噓的人則批評柯文哲言論空洞、看法轉彎等，平均10分鐘內噓極少連續出現10次，便隨即出現推。
+        </p>
+        <h2 class="title">六 、結論</h2>
+        <p>延續第五章的「PTT政治議論主體：推噓文化以「鄉民」為主體」，即可知以下幾點結論。</p>
+        <h3 class="title">（一）爭議性高　才能維持話題熱度</h3>
+        <p>無論帳號貼文意圖為支持或反對，貼文爭議性高的也會連帶造成討論度高，因此以韓國瑜為例，挺韓帳號發布挺韓貼文，則被噓多（如iversonXD），黑韓帳號（如linhu8883324經營方針）因貼文、新聞爭議性高，因此討論度也被炒熱，然而當挺韓帳號發布對對手陣營不利的貼文，一定程度會引發迴響，如「廠工吉娃娃」、「綠粉崩潰」。
+        </p>
+        <h3 class="title">（二）帳號虛實難分　IP位置、登入分佈一指現形</h3>
+        <p>在蔡英文的討論分析中，可知有部分帳號看似為該政治人物的死忠粉絲，但實際「假粉絲真網軍」的可能；在柯文哲的討論分析中，更可看出討論帳號除了相互維繫貼文聲勢外，當反對聲浪漸起，更會透過一定頻率的「推」高頻率維持風向。
+        </p>
+        <p>此外，韓國瑜的聲浪前十帳號中，支持韓國瑜的三個帳號yiyji、dandandanbao和Shinreiezou的IP位址皆在國外，且會頻繁出現在不同國家，如yiyji頻繁且平均分佈在美國、日本與新加坡，dandandanbao則頻繁出現在英國與印度，而Shinreiezou則是在中國、挪威、紐西蘭與美國等地，且此三者的上線時間皆高達16-18小時，以上現象除有「網軍」疑慮外，此三者帳號貼文的回應也常出現「跳板狗」、「你上次日本的ＩＰ去哪了」等嘲諷式回應。
+        </p>
+
+        <h3 class="title">
+            （三）政治網軍潛在你我身邊　開酸前請詳閱報導來源</h3>
+        <p>最後，政治網軍在PTT上實際上不是只出現在某幾位候選人身上，而是各陣營皆有現身的可能，然而在蘇啟誠自殺案（起源於一名帳號為GuRuGuRu在PTT所發佈的貼文）後PTT即停止申請新帳號，並且顯示id位置後，網民也皆開始對於網路消息懷抱質疑，該現象也顯示並證明了在ＰＴＴ的政治討論生態裡審視「消息來源」為首要重要的事，需要審視的不僅是事件本身，也在乎於ＰＯ文的帳號本身。
+        </p>
+        <h2 class="title">七、附件</h2>
+        <h3 class="title">程式碼（一）蒐集研究區間內，所有提到特定候選人的文章資料</h3>
+        <figure style="margin-top: 50px;width: 100% ">
+            <img src="python-code1.png" alt="leading image of this article" width="100%" />
+        </figure>
+        <h3 class="title">（二）蒐集特定帳號的留言區資料</h3>
+        <figure style="margin-top: 50px;margin-bottom:60px;width: 100% ">
+            <img src="python-code2.png" alt="leading image of this article" width="100%" />
+        </figure>
+        <div style="width:100%;height:2px;background-color: darkgray;margin-bottom:100px"></div>
+    </article>
+
+</body>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121184139-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-121184139-1');
+</script>
+<script>
+    document.write("<style>.chart02 {zoom:" + (window.screen.width / 1920) * 0.8 + "!important;}</style>");
+</script>
+
+</html>
